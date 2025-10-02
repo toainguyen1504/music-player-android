@@ -29,7 +29,7 @@ import com.example.musicplayerandroid.R
 fun SplashScreen (onStartClick:() -> Unit = {}) {
     Box (modifier = Modifier.fillMaxSize()) {
         Image(
-            painter = painterResource(id = R.drawable.intro_pic),
+            painter = painterResource(id = R.drawable.intro_main_pic),
             contentDescription = null,
             modifier = Modifier.align(Alignment.TopCenter),
             contentScale = ContentScale.Crop,
@@ -37,11 +37,11 @@ fun SplashScreen (onStartClick:() -> Unit = {}) {
 
         Button(onClick =  onStartClick,
             modifier = Modifier
-                .padding(top = 48.dp, start = 24.dp, end = 24.dp )
-                .align (Alignment.TopCenter)
+                .padding(bottom = 52.dp, start = 24.dp, end = 24.dp )
+                .align (Alignment.BottomCenter)
                 .height(50.dp),
             colors = ButtonDefaults.buttonColors(
-                containerColor = colorResource(R.color.orange)
+                containerColor = colorResource(R.color.primary)
             ), shape = RoundedCornerShape(25.dp)
         ) {
             Text (
