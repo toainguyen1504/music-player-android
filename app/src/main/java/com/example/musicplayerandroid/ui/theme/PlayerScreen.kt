@@ -70,11 +70,12 @@ fun PlayerScreen (
     var isPlaying by rememberSaveable { mutableStateOf(false) }
     var elapsed by remember { mutableStateOf(0L) }
     var duration by remember { mutableStateOf(0L) }
+
     var shuffledList by remember { mutableStateOf(songList) }
 
     val waveform = remember { getWaveform() }
     var waveformProgress by remember { mutableStateOf(0f) }
-
+    
     LaunchedEffect(currentIndex, isShuffle) {
         val list = if (isShuffle) shuffledList else songList
         val song = list.getOrNull(currentIndex) ?: return@LaunchedEffect
@@ -200,21 +201,21 @@ fun PlayerScreen (
                 Text(
                     song?.title.orEmpty(),
                     fontWeight = FontWeight.Bold,
-                    fontSize = 30.sp,
+                    fontSize = 24.sp,
                     textAlign = TextAlign.Center,
                     color = Color.White,
-                    modifier = Modifier.padding(top = 32.dp),
+                    modifier = Modifier.padding(top = 32.dp, start = 12.dp, end = 12.dp),
                     maxLines = 1,
-                    overflow = TextOverflow.Ellipsis
+                    overflow = TextOverflow.Ellipsis,
                 )
 
                 Text(
                     song?.artist.orEmpty(),
-                    fontWeight = FontWeight.Bold,
-                    fontSize = 20.sp,
+                    fontWeight = FontWeight.Medium,
+                    fontSize = 16.sp,
                     textAlign = TextAlign.Center,
                     color = Color.White,
-                    modifier = Modifier.padding(top = 16.dp),
+                    modifier = Modifier.padding(top = 16.dp, start = 8.dp, end = 8.dp),
                     maxLines = 1,
                     overflow = TextOverflow.Ellipsis
                 )
