@@ -51,7 +51,7 @@ fun SongListScreen(
 
     Box(modifier = Modifier.fillMaxSize()) {
         Image(
-            painter = painterResource(R.drawable.bg),
+            painter = painterResource(R.drawable.bg_main),
             contentDescription = null,
             modifier = Modifier.fillMaxSize(),
             contentScale = ContentScale.Crop
@@ -59,7 +59,7 @@ fun SongListScreen(
 
         Column(Modifier.fillMaxSize()) {
             Text(
-                text = "Explorer Artist",
+                text = "ToaiCDev",
                 fontSize = 20.sp,
                 color = Color.White,
                 fontWeight = FontWeight.Bold,
